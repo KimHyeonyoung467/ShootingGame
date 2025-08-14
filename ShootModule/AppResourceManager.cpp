@@ -53,12 +53,12 @@ namespace Resource
 			m_windowName.c_str(),
 			m_windowStyle,
 			m_x, m_y,
-			clientRect.right - clientRect.left, // ³Êºñ
-			clientRect.bottom - clientRect.top, // ³ôÀÌ
+			clientRect.right - clientRect.left, // ë„ˆë¹„
+			clientRect.bottom - clientRect.top, // ë†’ì´
 			nullptr,
 			nullptr,
 			m_hInstance,
-			this // ÀÎ½ºÅÏ½º ÁÖ¼Ò¸¦ NCREATESTRUCTÀÇ lpCreateParams¿¡ ÀúÀå
+			this // ì¸ìŠ¤í„´ìŠ¤ ì£¼ì†Œë¥¼ NCREATESTRUCTì˜ lpCreateParamsì— ì €ì¥
 		);
 		ShowWindow(m_hwnd, SW_SHOW);
 		UpdateWindow(m_hwnd);

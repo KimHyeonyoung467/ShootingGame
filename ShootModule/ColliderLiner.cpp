@@ -11,12 +11,12 @@ ColliderLiner::ColliderLiner(Transform* tr)
 
 void ColliderLiner::Initialize()
 {
-	//  Collider Liner Å©±â¿Í À§Ä¡ 
+	//  Collider Liner í¬ê¸°ì™€ ìœ„ì¹˜ 
 	m_scale = m_transform->getlocalScale();
 	m_position = m_transform->getlocalPosition();
 
 	setColor(D2D1::ColorF::HotPink);
-	// ±×¸± »óÀÚ¿¡ À§Ä¡¿Í Å©±â¸¦ Àû¿ë 
+	// ê·¸ë¦´ ìƒìžì— ìœ„ì¹˜ì™€ í¬ê¸°ë¥¼ ì ìš© 
 	rect = m_rect->createRectAngle(m_position, m_scale);
 
 

@@ -23,7 +23,7 @@ namespace Resource
 		HCURSOR m_hCursor = nullptr;
 		HICON m_hIconSmall = nullptr;
 
-		// ½ºÅ©¸° Å©±â. -> ÀÌ ¹üÀ§ ¹ÛÀ» ³ª°¡¸é ÃÑ¾ËÀº »èÁ¦! 
+		// ìŠ¤í¬ë¦° í¬ê¸°. -> ì´ ë²”ìœ„ ë°–ì„ ë‚˜ê°€ë©´ ì´ì•Œì€ ì‚­ì œ! 
 		UINT m_width; 
 		UINT m_height; 
 

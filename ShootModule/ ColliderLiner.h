@@ -8,14 +8,14 @@
 class ColliderLiner
 {
 public:
-	// ÀÎÅÍÆäÀÌ½º ½Ç¼ö¸¦ ¸·±â À§ÇÑ ÆÑÅä¸® ÇÔ¼ö 
+	// ì¸í„°í˜ì´ìŠ¤ ì‹¤ìˆ˜ë¥¼ ë§‰ê¸° ìœ„í•œ íŒ©í† ë¦¬ í•¨ìˆ˜ 
 	static ColliderLiner* drawLiner(Transform* tr)
 	{
 		return new ColliderLiner(tr); 
 	}
 
-	// GameObject ÀÇ Rect ¸¦ ¹Ş¾Æ¼­ Rect ÀÇ Å©±â ¸¸Å­ÀÇ ColliderLiner ¹üÀ§¸¦ Àá°í, 
-	// RendererManager ÀÇ m_rect ¸¦ »ç¿ëÇØ ±×¸°´Ù. 
+	// GameObject ì˜ Rect ë¥¼ ë°›ì•„ì„œ Rect ì˜ í¬ê¸° ë§Œí¼ì˜ ColliderLiner ë²”ìœ„ë¥¼ ì ê³ , 
+	// RendererManager ì˜ m_rect ë¥¼ ì‚¬ìš©í•´ ê·¸ë¦°ë‹¤. 
 
 	void Initialize();
 	void update();
@@ -37,8 +37,8 @@ private:
 	Vector2 m_position;
 	Vector2 m_scale;
 
-	RendererManager* m_render; // Collider Ãæµ¹ ¹üÀ§ ±×¸± »óÀÚ¸¦ °¡Áø RendererManager 
-									// RendererManager ¿¡¼­ »ö±òµµ º¯°æ °¡´É 
+	RendererManager* m_render; // Collider ì¶©ëŒ ë²”ìœ„ ê·¸ë¦´ ìƒìë¥¼ ê°€ì§„ RendererManager 
+									// RendererManager ì—ì„œ ìƒ‰ê¹”ë„ ë³€ê²½ ê°€ëŠ¥ 
 	D2D1::ColorF m_color; 
 
 	IRectAngle* m_rect; 

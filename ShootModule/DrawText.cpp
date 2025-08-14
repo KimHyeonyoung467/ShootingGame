@@ -4,12 +4,12 @@
 
 void TextDraw::Initialize()
 {
-	// Text Àü¿ë brush »ý¼º 
+	// Text ì „ìš© brush ìƒì„± 
 	m_d2DResource->getContext()->CreateSolidColorBrush(
 		D2D1::ColorF(D2D1::ColorF::White),
 		m_textBrush.GetAddressOf());
 
-	// text ´Â ¸ðµÎ 30.0f À§Ä¡¿¡¼­ ½ÃÀÛ 
+	// text ëŠ” ëª¨ë‘ 30.0f ìœ„ì¹˜ì—ì„œ ì‹œìž‘ 
 	m_transform->setlocalPosition(30.0f, 30.0f);
 	m_transform->setlocalscale(300.0f, 100.0f);
 
@@ -26,7 +26,7 @@ void TextDraw::drawText()
 	auto context(m_d2DResource->getContext());
 	auto brush(m_d2DResource->getBrush());
 
-	//m_textRct ¿¡ µû¶ó¼­ Å©±â¿Í À§Ä¡¸¦ Á¶Á¤. 
+	//m_textRct ì— ë”°ë¼ì„œ í¬ê¸°ì™€ ìœ„ì¹˜ë¥¼ ì¡°ì •. 
 	context->DrawText(
 		m_text.c_str(),
 		UINT32_MAX,

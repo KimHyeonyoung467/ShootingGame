@@ -12,19 +12,19 @@ namespace Resource
 	{
 		HRESULT hr;
 
-		// D3D11 µğ¹ÙÀÌ½º »ı¼º
+		// D3D11 ë””ë°”ì´ìŠ¤ ìƒì„±
 		D3D_FEATURE_LEVEL featureLevel;
 		D3D_FEATURE_LEVEL levels[] = { D3D_FEATURE_LEVEL_11_0 };
 		D3D11CreateDevice(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr,
 			D3D11_CREATE_DEVICE_BGRA_SUPPORT, levels, 1,
 			D3D11_SDK_VERSION, device.GetAddressOf(), &featureLevel, nullptr);
 
-		// D2D ÆÑÅä¸® ¹× µğ¹ÙÀÌ½º
+		// D2D íŒ©í† ë¦¬ ë° ë””ë°”ì´ìŠ¤
 		ComPtr<ID2D1Factory8> d2dFactory;
 		D2D1_FACTORY_OPTIONS options = {};
 		D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, options, d2dFactory.GetAddressOf());
 
-		// Rect ±×¸®±â À§ÇÑ factory RenderTarget ¼³Á¤ 
+		// Rect ê·¸ë¦¬ê¸° ìœ„í•œ factory RenderTarget ì„¤ì • 
 		RECT rc;
 		GetClientRect(m_windowResource->getHwnd(), &rc);
 		d2dFactory->CreateHwndRenderTarget(
@@ -48,19 +48,19 @@ namespace Resource
 			__uuidof(factory),
 			(void**)factory.GetAddressOf());
 
-		// ±×¸®±â À§ÇÑ brush ¼³Á¤ 
+		// ê·¸ë¦¬ê¸° ìœ„í•œ brush ì„¤ì • 
 		hr = context->CreateSolidColorBrush(
 			D2D1::ColorF(D2D1::ColorF::Black),
 			m_brush.GetAddressOf());
 
-		// Text ¸¦ À§ÇÑ Factory »ı¼º ¹× Format »ı¼º 
+		// Text ë¥¼ ìœ„í•œ Factory ìƒì„± ë° Format ìƒì„± 
 		DWriteCreateFactory(
 			DWRITE_FACTORY_TYPE_SHARED,
 			__uuidof(m_writeFactory),
 			reinterpret_cast<IUnknown**> (m_writeFactory.GetAddressOf())
 		);
 
-		//DwiteFactory ÀÇ ÇüÅÂ 
+		//DwiteFactory ì˜ í˜•íƒœ 
 		m_writeFactory->CreateTextFormat(
 			L"Cooper", // Font name 
 			nullptr,
@@ -72,11 +72,11 @@ namespace Resource
 			&m_writeTextFormat
 		);
 
-		// ÅØ½ºÆ®¸¦ ¼öÆò ¹× ¼öÁ÷À¸·Î Áß¾Ó¿¡ ¸ÂÃä´Ï´Ù.
+		// í…ìŠ¤íŠ¸ë¥¼ ìˆ˜í‰ ë° ìˆ˜ì§ìœ¼ë¡œ ì¤‘ì•™ì— ë§ì¶¥ë‹ˆë‹¤.
 		m_writeTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
 		m_writeTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
 	
-		// SwapChain »ı¼º
+		// SwapChain ìƒì„±
 		DXGI_SWAP_CHAIN_DESC1 scDesc = {};
 		scDesc.Width = m_windowResource->getWidth();
 		scDesc.Height = m_windowResource->getHeight();
@@ -87,14 +87,14 @@ namespace Resource
 		scDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
 		dxgiFactory->CreateSwapChainForHwnd(device.Get(), m_windowResource->getHwnd(), &scDesc, nullptr, nullptr, m_SwapChain.GetAddressOf());
 
-		// ¹é¹öÆÛ¸¦ Å¸°ÙÀ¸·Î ¼³Á¤
+		// ë°±ë²„í¼ë¥¼ íƒ€ê²Ÿìœ¼ë¡œ ì„¤ì •
 		ComPtr<IDXGISurface> backBuffer;
 		m_SwapChain->GetBuffer(0, IID_PPV_ARGS(&backBuffer));
 		D2D1_BITMAP_PROPERTIES1 bmpProps = D2D1::BitmapProperties1(
 			D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
 			D2D1::PixelFormat(scDesc.Format, D2D1_ALPHA_MODE_PREMULTIPLIED)
 		);
-		// D2D1 ºñÆ®¸Ê »ı¼º
+		// D2D1 ë¹„íŠ¸ë§µ ìƒì„±
 		context->CreateBitmapFromDxgiSurface(backBuffer.Get(), &bmpProps, m_d2dBitmap.GetAddressOf());
 		context->SetTarget(m_d2dBitmap.Get());
 	}

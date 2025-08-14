@@ -44,15 +44,15 @@ namespace Resource
 		ComPtr<ID2D1DeviceContext> context;
 		ComPtr<IWICImagingFactory> factory;
 
-		// ±×¸®·Á´Â Å¸°Ù 
+		// ê·¸ë¦¬ë ¤ëŠ” íƒ€ê²Ÿ 
 		ComPtr<ID2D1HwndRenderTarget> m_renderTarget;
 		ComPtr<ID2D1SolidColorBrush>	 m_brush;
 
-		// ºñÆ®¸Ê ¸®¼Ò½º¸¦ °ü¸®ÇÏ´Â ÀÚ¿ø
+		// ë¹„íŠ¸ë§µ ë¦¬ì†ŒìŠ¤ë¥¼ ê´€ë¦¬í•˜ëŠ” ìì›
 		ComPtr<ID2D1Bitmap1>			m_d2dBitmap;
 		ComPtr<IDXGISwapChain1>			m_SwapChain;
 
-		// Text ¸¦ Ãâ·ÂÇÏ±â À§ÇÑ Factory ¿Í format 
+		// Text ë¥¼ ì¶œë ¥í•˜ê¸° ìœ„í•œ Factory ì™€ format 
 		ComPtr<IDWriteFactory> m_writeFactory;
 		ComPtr<IDWriteTextFormat> m_writeTextFormat;
 

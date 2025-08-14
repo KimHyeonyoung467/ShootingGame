@@ -26,7 +26,7 @@ private:
 	
 	mutable D2D1::Matrix3x2F m_viewMatrix; 
 
-	float m_size; // ¡‹¿Œ, ¡‹ æ∆øÙ 
+	float m_size; // √Å√ú√Ä√é, √Å√ú ¬æ√Ü¬ø√¥ 
 
 	UINT m_viewWidth;
 	UINT m_viewHeight; 
@@ -34,7 +34,7 @@ private:
 	static void vaildata(UINT w, UINT h)
 	{
 		if (w <= 0 || h <= 0)
-			throw invalid_argument("viewport ≥–¿Ã 0 ¿Ã«œ."); 
+			throw invalid_argument("viewport ¬≥√ê√Ä√å 0 √Ä√å√á√è."); 
 	}
 };
 

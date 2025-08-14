@@ -3,18 +3,18 @@
 
 void Camera::createViewCamera(UINT width, UINT height)
 {
-	// Ä«¸Ş¶óÀÇ Å©±â 
+	// ì¹´ë©”ë¼ì˜ í¬ê¸° 
 	m_transform->setlocalPosition({ 0.0f, 0.0f });
 	m_transform->setlocalscale(width, height);
 	m_transform->setRotation(0.0f); 
 	
-	// Çà·Ä ÃÊ±â °è»ê (°»½Å¿ëÀ¸·Îµµ »ç¿ë) 
+	// í–‰ë ¬ ì´ˆê¸° ê³„ì‚° (ê°±ì‹ ìš©ìœ¼ë¡œë„ ì‚¬ìš©) 
 	m_viewMatrix = m_transform->getMatrix();	
 }
 
 D2D1::Matrix3x2F& Camera::getviewMatrix()
 {
-	// °»½ÅµÇÁö ¾ÊÀº transform ÀÇ Çà·ÄÀ» °¡Á®¿Â´Ù. Initialize ¿¡¼­ ÀÌ¹Ì °è»êÇÑ Çà·ÄÀ» °¡Á®¿À±â ‹š¹®¿¡, ÀÌ°÷¿¡¼­´Â ¿ªÇà·Ä º¯È¯¸¸ÀÌ ÇÊ¿äÇÏ´Ù. 
+	// ê°±ì‹ ë˜ì§€ ì•Šì€ transform ì˜ í–‰ë ¬ì„ ê°€ì ¸ì˜¨ë‹¤. Initialize ì—ì„œ ì´ë¯¸ ê³„ì‚°í•œ í–‰ë ¬ì„ ê°€ì ¸ì˜¤ê¸° Â‹Âšë¬¸ì—, ì´ê³³ì—ì„œëŠ” ì—­í–‰ë ¬ ë³€í™˜ë§Œì´ í•„ìš”í•˜ë‹¤. 
 	m_viewMatrix.Invert(); 
 
 	return m_viewMatrix; 

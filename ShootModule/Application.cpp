@@ -5,16 +5,16 @@ void ConsolePrint()
 {
 	AllocConsole();
 
-	// C ·±Å¸ÀÓ stdout/stderr ¸®´ÙÀÌ·ºÆ®
+	// C ëŸ°íƒ€ì„ stdout/stderr ë¦¬ë‹¤ì´ë ‰íŠ¸
 	FILE* fp;
 	freopen_s(&fp, "CONOUT$", "w", stdout);
 	freopen_s(&fp, "CONOUT$", "w", stderr);
 
-	// C++ ½ºÆ®¸²µµ µ¿±âÈ­
+	// C++ ìŠ¤íŠ¸ë¦¼ë„ ë™ê¸°í™”
 	std::ios::sync_with_stdio(true);
 
-	// Å×½ºÆ®
-	std::cout << "ÄÜ¼Ö°ú Direct2D À©µµ¿ì¸¦ µ¿½Ã¿¡ »ç¿ëÇÕ´Ï´Ù.\0\n";
+	// í…ŒìŠ¤íŠ¸
+	std::cout << "ì½˜ì†”ê³¼ Direct2D ìœˆë„ìš°ë¥¼ ë™ì‹œì— ì‚¬ìš©í•©ë‹ˆë‹¤.\0\n";
 }
 
 Application::Application() : m_appResource(Resource::AppResourceManager::Get()),
@@ -29,7 +29,7 @@ Application::~Application()
 
 void Application::Initialize()
 {
-	// bool Å¸ÀÔ º¯¼ö¸¦ true / false ·Î ÄÜ¼ÖÃ¢¿¡ ¶ç¿ì±â 
+	// bool íƒ€ì… ë³€ìˆ˜ë¥¼ true / false ë¡œ ì½˜ì†”ì°½ì— ë„ìš°ê¸° 
 	std::cout.setf(std::ios::boolalpha);
 
 	m_appResource->WindowInitialize();
@@ -55,7 +55,7 @@ void Application::Run()
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		// ·»´õ È£Ãâ  
+		// ë Œë” í˜¸ì¶œ  
 		update();
 		Render();
 	}
